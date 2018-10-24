@@ -16,4 +16,4 @@ class SpectrumAnalysis:
         interval_size = (self.max_freq - self.min_freq)/size
         freq1 = self.min_freq + (index * interval_size)
         freq2 = self.min_freq + ( (index+1) * interval_size )
-        return self.get_amplitude_in_range(self, freq1, freq2)
+        return self.get_amplitude_in_range(freq1, freq2)
