@@ -25,8 +25,8 @@ class AudioStream:
         self.chunk_size = chunk_size
         self.wf = wave.open(self.wave_path, 'rb')
         self.stream = self.p.open( format = self.p.get_format_from_width( self.wf.getsampwidth() ),
-                                   channels = self.wf.getnchannels,
-                                   rate = self.wf.getframerate,
+                                   channels = self.wf.getnchannels(),
+                                   rate = self.wf.getframerate(),
                                    output = True )
         self.data = self.wf.readframes(self.chunk_size)
 
