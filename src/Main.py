@@ -3,7 +3,7 @@ import audio.AudioStream as aus
 
 
 def get_filepath(filename):
-    return os.path.join('./audio/' + filename)
+    return './audio/' + filename
 
 
 stream = aus.AudioStream()
