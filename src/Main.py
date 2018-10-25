@@ -1,1 +1,4 @@
-print("This is a test print.")
+import sys
+sys.path.append('/audio')
+import AudioFile as af
+
