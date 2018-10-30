@@ -1,18 +1,32 @@
 # The class AudioSpectrum is responsible for storing information about the decoded audio spectrum.
 
+''' Functions in class AudioSpectrum:
+
+    set_audio_data(self, data)      Sets the current audio data.
+                                    * Use with get_stream_data in class AudioStream.
+
+    data_to_spectrum(self)          Converts the audio data to an audio spectrum.
+                                    * Currently, this is done using the FFT algorithm from numpy. Will be changed later.
+
+    get_spectrum(self)              Returns the current audio spectrum.
+'''
+
+
+
+import numpy as np
+
 
 class AudioSpectrum:
 
-    def __init__(self, test_int):
-        self.test_int = test_int
+    data = None
+    spec = None
 
-    # ========== TEST FUNCTIONS ==========
+    def set_audio_data(self, data):
+        self.data = data
 
-    def get_int(self):
-        return self.test_int
+    # Unfinished function.
+    def data_to_spectrum(self):
+        spec = np.fft.fft(self.data)
 
-    def set_int(self, test_int):
-        self.test_int = test_int
-
-    def print_int(self):
-        print(self.test_int)
+    def get_spectrum(self):
+        return self.spec

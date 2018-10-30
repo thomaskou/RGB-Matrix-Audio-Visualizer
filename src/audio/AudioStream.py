@@ -1,8 +1,31 @@
 # The class AudioStream accesses the current audio stream and returns relevant data through various functions.
 # Currently, only .wav files can be played.
 
+''' Functions in class AudioStream:
+
+    set_wave_path(self, wave_path)              Sets the file path to the audio file to be played.
+
+    init_audio_stream_wav(self, chunk_size)     Initializes an audio stream from a .wav file using pyaudio and wave.
+                                                * chunk_size indicates the size of the chunk of audio data to be read
+                                                  each tick.
+
+    tick_audio_stream_wav(self)                 Reads a chunk of audio data from the .wav stream.
+                                                * Audio data is written to variable "data".
+                                                * Run only when the stream data is not empty.
+
+    check_stream_data_empty(self)               Checks if there is no longer any audio data in the file to be read.
+                                                * Useful for terminating the audio stream when the file is done playing.
+
+    get_stream_data(self)                       Returns the stream's current audio data.
+                                                * Use only when the stream data is not empty.
+
+    stop_audio_stream(self)                     Closes and terminates the audio stream.
+
+    play_full_stream_wav(self)                  Plays the entire .wav audio stream.
+                                                * Used only for testing audio stream functionality.
+'''
+
 import pyaudio
-import numpy as np
 import wave
 
 
@@ -39,6 +62,9 @@ class AudioStream:
     def check_stream_data_empty(self):
         return self.data == '';
 
+    def get_stream_data(self):
+        return self.data
+
     # Terminate audio stream.
 
     def stop_audio_stream(self):
@@ -46,10 +72,10 @@ class AudioStream:
         self.stream.close()
         self.p.terminate()
 
-    # Play entire audio file.
+    # Play entire audio file (for testing only).
 
     def play_full_stream_wav(self):
-        while self.check_stream_data_empty() == False:
+        while not self.check_stream_data_empty():
             self.stream.write(self.data)
             self.data = self.wf.readframes(self.chunk_size)
         self.stop_audio_stream()

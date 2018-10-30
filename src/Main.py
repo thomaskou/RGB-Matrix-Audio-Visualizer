@@ -1,14 +1,33 @@
 import os
-import audio.AudioStream as aus
+import audio.AudioStream as astr
+import audio.AudioSpectrum as aspec
+import audio.SpectrumAnalysis as aspa
 
 
-def get_filepath(filename):
+# Local functions.
+
+def get_path(filename):
     return './audio/' + filename
 
 
-stream = aus.AudioStream()
+# Instantiate variables.
+CHUNK = 1024
 
-# stream.set_wave_path(get_filepath('test_triangle_arpeggio.wav'))
-stream.set_wave_path(get_filepath('downloaded/IKSON_PARADISE.wav'))
-stream.init_audio_stream_wav(1024)
-stream.play_full_stream_wav()
+# Instantiate relevant classes.
+audio = astr.AudioStream()
+spec = aspec.AudioSpectrum()
+# analysis = aspa.SpectrumAnalysis()
+
+# Pick audio file.
+audio.set_wave_path(get_path('test_triangle_arpeggio.wav'))
+audio.set_wave_path(get_path('downloaded/IKSON_PARADISE.wav'))
+audio.set_wave_path(get_path('downloaded/you_already_know_what_it_is.wav'))
+
+# Initialize audio stream.
+audio.init_audio_stream_wav(CHUNK)
+
+# Play audio stream.
+while not audio.check_stream_data_empty():
+    audio.stream.write(audio.data)
+    audio.data = audio.wf.readframes(audio.chunk_size)
+audio.stop_audio_stream()
