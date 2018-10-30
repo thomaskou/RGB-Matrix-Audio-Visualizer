@@ -1,4 +1,4 @@
-# The class AudioStream accesses the current audio stream and returns relevant data through various functions.
+# The class AudioStream plays an audio stream from a file and returns relevant data.
 # Currently, only .wav files can be played.
 
 ''' Functions in class AudioStream:
@@ -10,13 +10,13 @@
                                                   each tick.
 
     tick_audio_stream_wav(self)                 Reads a chunk of audio data from the .wav stream.
-                                                * Audio data is written to variable "data".
+                                                * Audio data is written to variable "data" as a bytes object.
                                                 * Run only when the stream data is not empty.
 
     check_stream_data_empty(self)               Checks if there is no longer any audio data in the file to be read.
                                                 * Useful for terminating the audio stream when the file is done playing.
 
-    get_stream_data(self)                       Returns the stream's current audio data.
+    get_stream_data(self)                       Returns the stream's current audio data as a bytes object.
                                                 * Use only when the stream data is not empty.
 
     stop_audio_stream(self)                     Closes and terminates the audio stream.
@@ -31,7 +31,7 @@ import wave
 
 class AudioStream:
 
-    # Initialize an audio stream using pyaudio.
+    # Initialize an audio stream using pyaudio and wave.
 
     p = pyaudio.PyAudio()
     stream = None
@@ -46,18 +46,19 @@ class AudioStream:
 
     def init_audio_stream_wav(self, chunk_size):
         self.chunk_size = chunk_size
-        self.wf = wave.open(self.wave_path, 'rb')
+        self.wf = wave.open(self.wave_path, 'rb')  # wf is set to a "wave_read" object.
         self.stream = self.p.open( format = self.p.get_format_from_width( self.wf.getsampwidth() ),
                                    channels = self.wf.getnchannels(),
                                    rate = self.wf.getframerate(),
                                    output = True )
         self.data = self.wf.readframes(self.chunk_size)
+        print(self.wf.getframerate())
 
     # Audio stream tick.
 
     def tick_audio_stream_wav(self):
         self.stream.write(self.data)
-        self.data = self.wf.readframes(self.chunk_size)
+        self.data = self.wf.readframes(self.chunk_size)  # data becomes a standard Python "bytes" object.
 
     def check_stream_data_empty(self):
         return self.data == '';
