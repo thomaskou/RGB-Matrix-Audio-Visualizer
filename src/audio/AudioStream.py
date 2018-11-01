@@ -40,6 +40,7 @@ class AudioStream:
     data = None
     chunk_size = None
     wave_path = None
+    fr = None
 
     def set_wave_path(self, wave_path):
         self.wave_path = wave_path
@@ -47,12 +48,12 @@ class AudioStream:
     def init_audio_stream_wav(self, chunk_size):
         self.chunk_size = chunk_size
         self.wf = wave.open(self.wave_path, 'rb')  # wf is set to a "wave_read" object.
+        self.fr = self.wf.getframerate()
         self.stream = self.p.open( format = self.p.get_format_from_width( self.wf.getsampwidth() ),
                                    channels = self.wf.getnchannels(),
-                                   rate = self.wf.getframerate(),
+                                   rate = self.fr,
                                    output = True )
         self.data = self.wf.readframes(self.chunk_size)
-        print(self.wf.getframerate())
 
     # Audio stream tick.
 
@@ -80,3 +81,8 @@ class AudioStream:
             self.stream.write(self.data)
             self.data = self.wf.readframes(self.chunk_size)
         self.stop_audio_stream()
+
+    # Misc functions.
+
+    def get_framerate(self):
+        return self.fr

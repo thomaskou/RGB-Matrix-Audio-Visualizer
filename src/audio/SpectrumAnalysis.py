@@ -31,31 +31,41 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-FREQ_BYTE_INTERVAL = 1
-FREQ_BYTE_MIN = 8
-FREQ_BYTE_MAX = 1016
+FREQ_BYTE_MIN = 0
+FREQ_BYTE_MAX = 1024
 
 
 class SpectrumAnalysis:
 
     min_freq = None
     max_freq = None
+    freq_byte_interval = None
 
     spec = None
+
+    # Initialization.
 
     def set_frequencies(self, min_freq, max_freq):
         self.min_freq = min_freq
         self.max_freq = max_freq
+        self.freq_byte_interval = (max_freq - min_freq) / (FREQ_BYTE_MAX - FREQ_BYTE_MIN)
+        # print(self.min_freq)
+        # print(self.max_freq)
+        # print(self.freq_byte_interval)
 
     def set_spectrum(self, spec):
         self.spec = spec  # spec is a 2-tuple containing an amplitude array and a frequency array.
         if self.min_freq is None or self.max_freq is None:
             self.min_freq = FREQ_BYTE_MIN
             self.max_freq = FREQ_BYTE_MAX
+            self.freq_byte_interval = 1
 
-    # Unfinished function.
+    # Accessors.
+
     def get_amplitude_in_range(self, freq1, freq2):
-        return math.expm1(np.mean(abs(self.spec[0])[int(freq1):int(freq2):])/2)
+        lower = ((freq1 - self.min_freq) / self.freq_byte_interval) + FREQ_BYTE_MIN
+        upper = ((freq2 - self.min_freq) / self.freq_byte_interval) + FREQ_BYTE_MIN
+        return math.expm1(np.mean(abs(self.spec[0])[int(lower):int(upper):])/2)
 
     def get_amplitude_at_index(self, index, size):
         interval_size = (self.max_freq - self.min_freq)/size
@@ -68,6 +78,8 @@ class SpectrumAnalysis:
         for i in range(size):
             s.append(self.get_amplitude_at_index(i, size))
         return s
+
+    # Plot functions.
 
     def plot_init(self):
         plt.ion()
