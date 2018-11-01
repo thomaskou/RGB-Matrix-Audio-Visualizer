@@ -28,6 +28,7 @@
 
 import math
 import numpy as np
+import tkinter as tk
 import matplotlib.pyplot as plt
 
 
@@ -78,6 +79,14 @@ class SpectrumAnalysis:
         for i in range(size):
             s.append(self.get_amplitude_at_index(i, size))
         return s
+
+    # Tkinter functions.
+
+    def draw_init(self):
+        draw = tk.Tk()
+        w = tk.Canvas(draw, width=800, height=400)
+        w.pack()
+        draw.mainloop()
 
     # Plot functions.
 

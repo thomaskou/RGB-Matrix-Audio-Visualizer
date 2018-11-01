@@ -28,8 +28,9 @@ audio.set_wave_path(get_path('test_triangle_arpeggio.wav'))
 audio.init_audio_stream_wav(CHUNK)
 span.set_frequencies(0, audio.get_framerate())
 
-# Initialize audio plot (for testing only).
-span.plot_init()
+# Initialize drawing (for testing only).
+# span.plot_init()
+span.draw_init()
 
 # Work through entire audio stream.
 counter = 0
@@ -43,9 +44,9 @@ while not audio.check_stream_data_empty():              # Run the loop while the
         # print(abs(spec.get_spectrum()[0]))
         # print(spec.get_spectrum()[1])
         span.set_spectrum(spec.get_spectrum())          # Passes spectrum data to SpectrumAnalysis.
-        print(span.get_amplitude_array(16))
-        span.plot_update()
-        span.plot_pause(0.000000001)
+        # print(span.get_amplitude_array(16))
+        # span.plot_update()
+        # span.plot_pause(0.000000001)
     except ValueError:
         break
 audio.stop_audio_stream()                               # Stops the audio stream once there is no longer any audio data.
