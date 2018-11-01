@@ -20,9 +20,9 @@ spec = aSpec.AudioSpectrum()
 span = aSpa.SpectrumAnalysis()
 
 # Pick audio file.
-# audio.set_wave_path(get_path('test_triangle_arpeggio.wav'))
+audio.set_wave_path(get_path('test_triangle_arpeggio.wav'))
 # audio.set_wave_path(get_path('downloaded/IKSON_PARADISE.wav'))
-audio.set_wave_path(get_path('downloaded/you_already_know_what_it_is.wav'))
+# audio.set_wave_path(get_path('downloaded/you_already_know_what_it_is.wav'))
 
 # Initialize audio stream.
 audio.init_audio_stream_wav(CHUNK)

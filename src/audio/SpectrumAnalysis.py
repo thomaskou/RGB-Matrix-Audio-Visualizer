@@ -26,13 +26,14 @@
                                                 * Consider multiple threads? (or something like that)
 '''
 
+import math
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 FREQ_BYTE_INTERVAL = 1
-FREQ_BYTE_MIN = 32
-FREQ_BYTE_MAX = 992
+FREQ_BYTE_MIN = 8
+FREQ_BYTE_MAX = 1016
 
 
 class SpectrumAnalysis:
@@ -54,7 +55,7 @@ class SpectrumAnalysis:
 
     # Unfinished function.
     def get_amplitude_in_range(self, freq1, freq2):
-        return np.mean(abs(self.spec[0])[int(freq1):int(freq2):])
+        return math.expm1(np.mean(abs(self.spec[0])[int(freq1):int(freq2):])/2)
 
     def get_amplitude_at_index(self, index, size):
         interval_size = (self.max_freq - self.min_freq)/size
@@ -74,7 +75,8 @@ class SpectrumAnalysis:
 
     def plot_update(self):
         plt.clf()
-        plt.plot(range(64), self.get_amplitude_array(64))
+        plt.bar(range(16), self.get_amplitude_array(16))
+        plt.ylim(top=4)
         plt.draw()
 
     def plot_pause(self, time):
