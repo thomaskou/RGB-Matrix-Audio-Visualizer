@@ -24,7 +24,7 @@ class AudioSpectrum:
         self.data = data
 
     def data_to_spectrum(self):
-        b = list(self.data)  # Converts bytes to bytearray for use with numpy FFT algorithm.
+        b = list(self.data)[::4]  # Converts bytes to bytearray for use with numpy FFT algorithm.
         s = np.fft.fft(b)/len(b)  # Computes the discrete Fourier transform of the bytearray.
         s = s[range(int(len(b)/2))]
         f = [i for i in range(0, int(len(b)/2))]

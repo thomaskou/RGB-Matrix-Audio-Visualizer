@@ -31,8 +31,8 @@ import matplotlib.pyplot as plt
 
 
 FREQ_BYTE_INTERVAL = 1
-FREQ_BYTE_MIN = 0
-FREQ_BYTE_MAX = 2048
+FREQ_BYTE_MIN = 32
+FREQ_BYTE_MAX = 992
 
 
 class SpectrumAnalysis:
