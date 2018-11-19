@@ -1,8 +1,9 @@
-import keyboard
+# import keyboard
 import audio.AudioStream as aStr
 import audio.InputStream as aInp
 import audio.AudioSpectrum as aSpec
 import audio.SpectrumAnalysis as aSpa
+import raspberry.SpectrumConversion as specConvert
 
 
 INPUT = True
@@ -28,6 +29,7 @@ def play_file():
     audio = aStr.AudioStream()
     spec = aSpec.AudioSpectrum()
     span = aSpa.SpectrumAnalysis()
+    conv = specConvert.SpectrumConversion()
 
     # Initialize class stuff.
     audio.set_wave_path(get_path(FILE))
@@ -47,9 +49,10 @@ def play_file():
             # print(abs(spec.get_spectrum()[0]))
             # print(spec.get_spectrum()[1])
             span.set_spectrum(spec.get_spectrum())          # Passes spectrum data to SpectrumAnalysis.
-            print(span.get_amplitude_array(16))
+            # print(span.get_amplitude_array(16))
             # span.plot_update()
             # span.plot_pause(0.000000001)
+            conv.set_array(span.get_amplitude_array(16))
         except ValueError:
             break
     audio.stop_audio_stream()                               # Stops the stream once there is no longer any audio data.
@@ -61,6 +64,7 @@ def input_seconds():
     inp = aInp.InputStream()
     spec = aSpec.AudioSpectrum()
     span = aSpa.SpectrumAnalysis()
+    conv = specConvert.SpectrumConversion()
 
     # Initialize class stuff.
     inp.init_input_stream(CHUNK)
@@ -80,8 +84,9 @@ def input_seconds():
             # print(spec.get_spectrum()[1])
             span.set_spectrum(spec.get_spectrum())
             # print(span.get_amplitude_array(16))
-            span.plot_update()
-            span.plot_pause(0.000000001)
+            # span.plot_update()
+            # span.plot_pause(0.000000001)
+            conv.set_array(span.get_amplitude_array(16))
         except ValueError:
             break
     inp.stop_input_stream()
@@ -93,6 +98,7 @@ def input_indefinite():
     inp = aInp.InputStream()
     spec = aSpec.AudioSpectrum()
     span = aSpa.SpectrumAnalysis()
+    conv = specConvert.SpectrumConversion()
 
     # Initialize class stuff.
     inp.init_input_stream(CHUNK)
@@ -112,8 +118,9 @@ def input_indefinite():
             # print(spec.get_spectrum()[1])
             span.set_spectrum(spec.get_spectrum())
             # print(span.get_amplitude_array(16))
-            span.plot_update()
-            span.plot_pause(0.000000001)
+            # span.plot_update()
+            # span.plot_pause(0.000000001)
+            conv.set_array(span.get_amplitude_array(16))
         except ValueError:
             break
     inp.stop_input_stream()
