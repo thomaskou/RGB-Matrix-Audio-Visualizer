@@ -21,6 +21,7 @@ def on_message(client, userdata, msg):
 class MqttTest:
 
     def __init__(self):
+        global client
         client = mqtt.Client(client_id="MqttTest")
         client.username_pw_set("se101", "se101")
         client.on_connect = on_connect

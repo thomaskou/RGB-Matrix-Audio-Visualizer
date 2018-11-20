@@ -30,12 +30,12 @@ class SpectrumConversion:
     moddedArray = None
 
     client = None
-    mtest = None
+    # mtest = None
 
     thread = None
 
     def __init__(self):
-        self.mtest = MT.MqttTest()
+        # self.mtest = MT.MqttTest()
         self.thread = SendThread()
         self.thread.start()
 
