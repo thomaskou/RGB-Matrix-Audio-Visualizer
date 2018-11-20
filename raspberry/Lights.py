@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import paho.mqtt.client as mqtt
 from SampleBase import SampleBase
 
@@ -21,7 +21,7 @@ class Lights(SampleBase):
     def __init__(self, *args, **kwargs):
         super(Lights, self).__init__(*args, **kwargs)
         self.client = mqtt.Client()
-        self.client.connect("172.31.237.19")
+        self.client.connect("m15.cloudmqtt.com", 15406)
         self.client.loop_start()
 
     def receive(self):

@@ -1,4 +1,3 @@
-# import keyboard
 import audio.AudioStream as aStr
 import audio.InputStream as aInp
 import audio.AudioSpectrum as aSpec

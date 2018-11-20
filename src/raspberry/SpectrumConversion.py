@@ -1,5 +1,25 @@
-import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
+import raspberry.MqttTest as MT
+import threading
+
+
+class SendThread(threading.Thread):
+
+    threadArray = None
+
+    def __init__(self):
+        threading.Thread.__init__(self)
+
+    def run(self):
+        while True:
+            self.send()
+
+    def send(self):
+        publish.single("array", payload=str(self.threadArray), hostname="m15.cloudmqtt.com", port=15406,
+                       auth={'username':"se101", 'password':"se101"}, tls=None)
+
+    def set_array(self, array):
+        self.threadArray = array
 
 
 class SpectrumConversion:
@@ -10,11 +30,14 @@ class SpectrumConversion:
     moddedArray = None
 
     client = None
+    mtest = None
+
+    thread = None
 
     def __init__(self):
-        self.client = mqtt.Client()
-        self.client.connect("172.31.237.19")
-        self.client.loop_start()
+        self.mtest = MT.MqttTest()
+        self.thread = SendThread()
+        self.thread.start()
 
     def set_array(self, freqArray):
         self.freqArray = freqArray
@@ -25,11 +48,7 @@ class SpectrumConversion:
             x2 = min(int(self.freqArray[i] * 32 / self.MAX_AMPLITUDE), 32)
             self.moddedArray.append(x2)
 
-    def send(self):
-        publish.single("array", str(self.moddedArray))
-        # print(str(self.moddedArray))
-
     def tick(self, freqArray):
         self.set_array(freqArray)
         self.convert_array()
-        self.send()
+        self.thread.set_array(self.moddedArray)
