@@ -6,7 +6,7 @@ import audio.SpectrumAnalysis as aSpa
 import raspberry.SpectrumConversion as specConvert
 
 
-INPUT = True
+INPUT = False
 TIMED = False
 SECONDS = 10
 
@@ -20,7 +20,7 @@ CHUNK = 2048
 # Local functions.
 
 def get_path(filename):
-    return './audio/' + filename
+    return '../audio/' + filename
 
 
 def play_file():
@@ -52,7 +52,7 @@ def play_file():
             # print(span.get_amplitude_array(16))
             # span.plot_update()
             # span.plot_pause(0.000000001)
-            conv.set_array(span.get_amplitude_array(16))
+            conv.tick(span.get_amplitude_array(16))
         except ValueError:
             break
     audio.stop_audio_stream()                               # Stops the stream once there is no longer any audio data.
@@ -86,7 +86,7 @@ def input_seconds():
             # print(span.get_amplitude_array(16))
             # span.plot_update()
             # span.plot_pause(0.000000001)
-            conv.set_array(span.get_amplitude_array(16))
+            conv.tick(span.get_amplitude_array(16))
         except ValueError:
             break
     inp.stop_input_stream()
@@ -120,7 +120,7 @@ def input_indefinite():
             # print(span.get_amplitude_array(16))
             # span.plot_update()
             # span.plot_pause(0.000000001)
-            conv.set_array(span.get_amplitude_array(16))
+            conv.tick(span.get_amplitude_array(16))
         except ValueError:
             break
     inp.stop_input_stream()
