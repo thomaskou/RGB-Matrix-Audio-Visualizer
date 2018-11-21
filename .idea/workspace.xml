@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3a5b79-4a03-463d-87d0-6ff9280d390f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/raspberry/Lights.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberry/Lights.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/raspberry/MqttTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raspberry/MqttTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/raspberry/SpectrumConversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raspberry/SpectrumConversion.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,15 +16,15 @@
     <session id="1803732968">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="7" />
           <entry key="project.open.time.6" value="5" />
-          <entry key="project.open.time.7" value="7" />
+          <entry key="project.open.time.7" value="8" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,7 +47,7 @@
           <entry key="Python Console" value="46" />
           <entry key="dummy" value="1" />
           <entry key="md" value="1798" />
-          <entry key="py" value="21723" />
+          <entry key="py" value="22163" />
           <entry key="txt" value="229" />
         </counts>
       </usages-collector>
@@ -55,7 +55,7 @@
         <counts>
           <entry key="Markdown" value="1798" />
           <entry key="PLAIN_TEXT" value="230" />
-          <entry key="Python" value="20947" />
+          <entry key="Python" value="21387" />
           <entry key="Scratch" value="822" />
         </counts>
       </usages-collector>
@@ -68,11 +68,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+            <state relative-caret-position="323">
+              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,29 +83,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/raspberry/SpectrumConversion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="330">
+              <caret line="50" column="82" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1542747724247" expanded="true" signature="146:550" ph="..." />
-                <marker date="1542747724247" expanded="true" signature="727:736" ph="..." />
-                <marker date="1542747724247" expanded="true" signature="727:833" ph="..." />
-                <marker date="1542747724247" expanded="true" signature="827:833" ph="..." />
-                <marker date="1542747724247" expanded="true" signature="1102:1108" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raspberry/Lights.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+            <state relative-caret-position="-17">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
-                <element signature="e#22#53#0" expanded="true" />
-                <marker date="1542748327964" expanded="true" signature="205:594" ph="..." />
-                <marker date="1542748327964" expanded="true" signature="1402:1408" ph="..." />
+                <marker date="1542748362731" expanded="true" signature="205:594" ph="..." />
+                <marker date="1542748362731" expanded="true" signature="1402:1408" ph="..." />
               </folding>
             </state>
           </provider>
@@ -112,23 +109,11 @@
         <entry file="file://$PROJECT_DIR$/src/raspberry/MqttTest.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <marker date="1542748013921" expanded="true" signature="244:281" ph="..." />
                 <marker date="1542748013921" expanded="true" signature="448:457" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="136">
-                <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -168,11 +153,11 @@
         <option value="$PROJECT_DIR$/src/audio/AudioSpectrum.py" />
         <option value="$PROJECT_DIR$/src/raspberry/Lights.py" />
         <option value="$PROJECT_DIR$/raspberry/Main.py" />
-        <option value="$PROJECT_DIR$/src/Main.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/raspberry/SpectrumConversion.py" />
         <option value="$PROJECT_DIR$/src/raspberry/MqttTest.py" />
         <option value="$PROJECT_DIR$/raspberry/Lights.py" />
+        <option value="$PROJECT_DIR$/src/raspberry/SpectrumConversion.py" />
+        <option value="$PROJECT_DIR$/src/Main.py" />
       </list>
     </option>
   </component>
@@ -365,7 +350,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.32897863" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49966148" weight="0.32897863" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49966148" visible="true" weight="0.32897863" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39904988" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -405,6 +390,11 @@
           <url>file://$PROJECT_DIR$/src/audio/SpectrumAnalysis.py</url>
           <line>28</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/raspberry/Lights.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -453,21 +443,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raspberry/SampleBase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -479,25 +456,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/raspberry/SpectrumConversion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1542747724247" expanded="true" signature="146:550" ph="..." />
-            <marker date="1542747724247" expanded="true" signature="727:736" ph="..." />
-            <marker date="1542747724247" expanded="true" signature="727:833" ph="..." />
-            <marker date="1542747724247" expanded="true" signature="827:833" ph="..." />
-            <marker date="1542747724247" expanded="true" signature="1102:1108" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/raspberry/MqttTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <marker date="1542748013921" expanded="true" signature="244:281" ph="..." />
             <marker date="1542748013921" expanded="true" signature="448:457" ph="..." />
@@ -507,12 +469,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raspberry/Lights.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+        <state relative-caret-position="-17">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
-            <element signature="e#22#53#0" expanded="true" />
-            <marker date="1542748327964" expanded="true" signature="205:594" ph="..." />
-            <marker date="1542748327964" expanded="true" signature="1402:1408" ph="..." />
+            <marker date="1542748362731" expanded="true" signature="205:594" ph="..." />
+            <marker date="1542748362731" expanded="true" signature="1402:1408" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/raspberry/SpectrumConversion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="50" column="82" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

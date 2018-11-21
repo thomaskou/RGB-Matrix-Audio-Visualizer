@@ -24,7 +24,7 @@ class SendThread(threading.Thread):
 
 class SpectrumConversion:
 
-    MAX_AMPLITUDE = 2.5
+    MAX_AMPLITUDE = 1
 
     freqArray = None
     moddedArray = None
@@ -45,8 +45,10 @@ class SpectrumConversion:
     def convert_array(self):
         self.moddedArray = []
         for i in range(16):
-            x2 = min(int(self.freqArray[i] * 32 / self.MAX_AMPLITUDE), 32)
+            x1 = self.freqArray[i] - 0.9
+            x2 = int(min(min(int(x1 * 32 / self.MAX_AMPLITUDE), 32) * 2.2, 32))
             self.moddedArray.append(x2)
+        self.moddedArray[0] = int((self.moddedArray[0] + self.moddedArray[1]) / 2)
 
     def tick(self, freqArray):
         self.set_array(freqArray)

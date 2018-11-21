@@ -9,9 +9,15 @@ INPUT = False
 TIMED = False
 SECONDS = 10
 
-FILE = 'test_triangle_arpeggio.wav'
+# FILE = 'test_triangle_arpeggio.wav'
 # FILE = 'downloaded/IKSON_PARADISE.wav'
 # FILE = 'downloaded/you_already_know_what_it_is.wav'
+# FILE = 'downloaded/HUMBLE.wav'
+# FILE = 'downloaded/money_trees.wav'
+# FILE = 'downloaded/STRONGER.wav'
+# FILE = 'downloaded/Counting_Stars.wav'
+# FILE = 'downloaded/just-the-way-you-are.wav'
+FILE = 'downloaded/BB.wav'
 
 CHUNK = 2048
 
