@@ -49,5 +49,5 @@ these can be commented out.
 #### Additional credits
 
 The file `raspberry/SampleBase.py` is sourced from the `rpi-rgb-led-matrix` repository and
-used under the GPL v2.0 license. Credits go to *hzeller* and the other contributors of the
+used under the GPL v3.0 license. Credits go to *hzeller* and the other contributors of the
 repository.
