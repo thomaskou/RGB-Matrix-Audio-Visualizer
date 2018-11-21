@@ -10,7 +10,9 @@ sending them to an external MQTT server. The `raspberry` folder contains a scrip
 `Lights.py` that runs on the Raspberry Pi, which is responsible for receiving messages
 from the MQTT server and displaying them on an attached 32x64 LED board.
 
-![](docs/preview.png)
+***
+
+![](docs/preview2.png)
 
 ***
 
