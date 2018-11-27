@@ -1,4 +1,4 @@
-### Audio Visualizer for Arduino  
+### Audio Visualizer for Raspberry Pi  
 ***Contributors:*** *Thomas Kou, Hansson Lin*
 
 An audio visualization program and our SE 101 term project. For use with Raspberry Pi and
